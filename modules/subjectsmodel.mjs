@@ -1,16 +1,15 @@
 export class SubjectsModel {
-    constructor(object){
-    this.subject = new Map();
-    this.subject.set()
-
+    constructor(object) {
+        if (object && typeof object === 'object' && typeof object.title === "string" && typeof object.lessons === "number") {
+            this.title = object.title;
+            this.lessons = object.lessons;
+            this.id = new Date().getUTCMilliseconds();
+            if (typeof object.description === "string") {
+                this.description = object.description;
+            }
+        } else {
+            throw new Error('Not an object, or invalid argument');
+        }
     }
-
 }
-
-    Object.defineProperty(subjectsModel, 'id', {
-        get() {
-            let _id = new Date().getUTCMilliseconds();
-            return _id;
-        },
-     });
 

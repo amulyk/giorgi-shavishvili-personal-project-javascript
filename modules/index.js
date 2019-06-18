@@ -1,2 +1,2 @@
-import { SubjectsModel } from './subjectsmodel.mjs';
+import { SubjectsModel } from './subjectsmodel';
 export { SubjectsModel };
