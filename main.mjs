@@ -1,4 +1,4 @@
-import { SubjectsModel , LMSModel , TeachersModel } from './modules/index.mjs';
+import { SubjectsModel , LMSModel , TeachersModel , PupilsModel } from './modules/index.mjs';
 
 const history = new SubjectsModel({
   title: 'History',
@@ -103,6 +103,52 @@ let newTeacherInfo = {
 const teachers = new TeachersModel();
 
 // Create a new teacher
-const teacherId = teachers.add(data);
-const teacherId2 = teachers.add(data2);
-console.log(teacherId2);
+// Create a new teacher
+// const teacherId = teachers.add(data);
+
+// will return Teachers data including teacher's id
+teachers.read(teacherId)
+
+// will update Teacher. This method should use the same validation as a constructor method
+const teacherId = teachers.update(teacherId, updatedProfile)
+
+// will remove techer
+
+
+
+const pupildata = {
+    name: {
+        first: "dfdsfds",
+        last: "dfsdfsdf"
+    },
+    image: "asedqweqw",
+    dateOfBirth: "12.11.2018",
+    phones: [
+        {
+            "phone": "123123123",
+            "primary": true
+        }
+    ],
+    sex: "male",
+}
+
+const updatedProfile = {
+    name: {
+        first: "dfsdfdf",
+        last: "dsfdfsdfdsf"
+    },
+    image: "wqe",
+    dateOfBirth: "03.01.2016",
+    phones: [
+        {
+            "phone": "dgsadgdsagdsagdsa",
+            "primary": true
+        }
+    ],
+    sex: "male",
+}
+
+const pupils = new PupilsModel();
+
+// Create a new pupil
+const pupil = pupils.add(pupildata);

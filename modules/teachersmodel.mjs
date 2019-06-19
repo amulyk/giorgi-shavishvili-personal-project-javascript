@@ -1,4 +1,4 @@
-
+import { Validate } from './validate';
 export class TeachersModel {
     constructor() {
         this.teachers = new Map();

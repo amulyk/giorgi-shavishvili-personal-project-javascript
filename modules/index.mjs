@@ -6,3 +6,6 @@ export { LMSModel };
 
 import { TeachersModel } from './teachersmodel';
 export { TeachersModel };
+
+import { PupilsModel } from './pupilsmodel';
+export { PupilsModel };
